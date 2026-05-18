@@ -25,8 +25,8 @@ jobs:
           pytest --con=apps --cov-report=term-missing --cov-report=json --cov-report=html
 
       - name: upload report to artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: htmlcov
-          
+

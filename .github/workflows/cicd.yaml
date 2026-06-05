@@ -27,6 +27,6 @@ jobs:
       - name: upload report to artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.ref_name }}-coverage-report-${{ github.run_number }}-${{ github.run_attempt }}
+          name: ${{ replace(github.ref_name, 'feat/', '') }}-coverage-report-${{ github.run_number }}-${{ github.run_attempt }}
           path: htmlcov
 

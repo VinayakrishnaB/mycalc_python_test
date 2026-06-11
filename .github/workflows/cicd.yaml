@@ -27,11 +27,11 @@ jobs:
       - name: Extract branch name
         id: branchName
         run: |
-          echo "name=${GITHUB_REF_NAME##*/}" >> GITHUB_OUTPUT
+          echo "name=${GITHUB_REF_NAME**/}" >> GITHUB_OUTPUT
 
       - name: upload report to artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.branchName.outputs.name }}-coverage-report-${{ github.run_number }}-${{ github.run_attempt }}
+          name: ${{ github.actor }}-coverage-report-${{ github.run_number }}-${{ github.run_attempt
           path: htmlcov
 
